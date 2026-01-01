@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "d24c737e-5f89-470c-a1e4-100fa4d48e6b",
+		"name": "primetread",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32934105"
+	},
+	"item": [
+		{
+			"name": "register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Normal User\",\r\n  \"email\": \"user@test.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rajesh@gmail.com\",\r\n  \"password\": \"rajeshpatil0319\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get protected",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTUyZTdlNDlkZjA4Y2Q0OTE4MzNiYSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzY3MTk4NTY1LCJleHAiOjE3NjcyODQ5NjV9.RE7MPVZHMRQbVn9an4HCa2fusbnnNpeJ14BZPVym0p4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"rajesh@gmail.com\",\r\n  \"password\": \"rajeshpatil0319\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/protected",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"protected"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add teask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTUyZTdlNDlkZjA4Y2Q0OTE4MzNiYSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzY3MTk5MTYxLCJleHAiOjE3NjcyODU1NjF9.ixrgHs3zMSsjuOdc2RLOeGv_tmYRIvyUfMU_dC5S2f4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Learn fullstack development\",\r\n  \"description\": \"Complete internship assignment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTUyZTdlNDlkZjA4Y2Q0OTE4MzNiYSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzY3MjU5OTU3LCJleHAiOjE3NjczNDYzNTd9.-ePKevyrn5rU7ZI1Od7WoHD2v5br-lasM7YtecSSkGU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Learn Backend\",\r\n  \"description\": \"Complete internship assignment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get task by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTUyZTdlNDlkZjA4Y2Q0OTE4MzNiYSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzY3MTk5MTYxLCJleHAiOjE3NjcyODU1NjF9.ixrgHs3zMSsjuOdc2RLOeGv_tmYRIvyUfMU_dC5S2f4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Learn Backend\",\r\n  \"description\": \"Complete internship assignment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks/69555203aab26fab456a6558",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"69555203aab26fab456a6558"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTUyZTdlNDlkZjA4Y2Q0OTE4MzNiYSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzY3MTk5MTYxLCJleHAiOjE3NjcyODU1NjF9.ixrgHs3zMSsjuOdc2RLOeGv_tmYRIvyUfMU_dC5S2f4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"COMPLETED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks/695552bfaab26fab456a6561",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"695552bfaab26fab456a6561"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTUyZTdlNDlkZjA4Y2Q0OTE4MzNiYSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzY3MjYyMTg0LCJleHAiOjE3NjczNDg1ODR9.DwB6PU0OV0HYmtWlZVqMvEnm0QMpFwcooSJppKTD1Gw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"COMPLETED\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v1/tasks/695647dc1320b85a2a991b33",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						"695647dc1320b85a2a991b33"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin test",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NTUyZTdlNDlkZjA4Y2Q0OTE4MzNiYSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzY3MjU5OTU3LCJleHAiOjE3NjczNDYzNTd9.-ePKevyrn5rU7ZI1Od7WoHD2v5br-lasM7YtecSSkGU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/admin/dashboard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"admin",
+						"dashboard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
